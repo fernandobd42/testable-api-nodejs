@@ -4,11 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=prod babel-node index.js",
-    "test": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js && NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
+    "test": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js && NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js && NODE_ENV=test mocha --opts test/contracts/mocha.opts test/contracts/**/*.js",
     "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
     "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
-    "lint": "eslint '**/*.js'",
-    "lint-fix": "eslint '**/*.js' --fix"
+    "test-contract": "NODE_ENV=test mocha --opts test/contracts/mocha.opts test/contracts/**/*.js",
+    "lint": "eslint '**/*.js' --fix"
   },
   "repository": "https://github.com/fernandobd42/testable-api-nodejs.git",
   "author": "fernandobd42 <fernandolucasbd@gmail.com>",
@@ -29,6 +29,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "joi": "^10.5.0",
+    "joi-assert": "^0.0.3",
     "mocha": "^3.4.1",
     "supertest": "^3.0.0",
     "testdouble": "^2.1.2"

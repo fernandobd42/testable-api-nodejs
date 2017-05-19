@@ -14,6 +14,8 @@
         "it": true,
         "expect": true,
         "request": true,
-        "td": true
+        "td": true,
+        "Joi": true,
+        "joiAssert": true
     }
 }
