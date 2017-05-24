@@ -39,6 +39,6 @@ export default (sequelize, DataType) => {
         classMethods: {
             isPassword: (encodePassword, password) => bcrypt.compareSync(password, encodePassword),
         }
-    }),
+    });
     return Users;
 }

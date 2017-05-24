@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=prod babel-node index.js",
-    "test": "yarn lint && yarn test-integration && yarn test-unit && yarn test-contract",
-    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/*.js",
+    "test": "yarn test-integration && yarn test-unit && yarn test-contract",
+    "test-integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.js",
     "test-unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.js",
     "test-contract": "NODE_ENV=test mocha --opts test/contracts/mocha.opts test/contracts/contracts/*.js",
     "lint": "eslint '**/*.js' --fix"
