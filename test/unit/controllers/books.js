@@ -1,4 +1,5 @@
 import BooksController from '../../../controllers/books';
+import HttpStatus from 'http-status';
 
 describe('controllers books', () => {
   describe('Get all books: getAll()', () => {
@@ -65,7 +66,7 @@ describe('controllers books', () => {
       const booksController = new BooksController(Books);
       return booksController.create({ book })
             .then((response) => {
-              expect(response.statusCode).to.be.eql(201);
+              expect(response.statusCode).to.be.eql(HttpStatus.CREATED);
               expect(response.data).to.be.eql(expectedResponse);
             });
     });
@@ -106,7 +107,7 @@ describe('controllers books', () => {
 
       const booksController = new BooksController(Books);
       return booksController.delete({ id: 1 })
-            .then(response => expect(response.statusCode).to.be.eql(204));
+            .then(response => expect(response.statusCode).to.be.eql(HttpStatus.NO_CONTENT));
     });
   });
 });
