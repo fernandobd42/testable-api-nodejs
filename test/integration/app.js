@@ -2,7 +2,8 @@ describe('Routes Books', () => {
   const Books = app.datasource.models.Books;
   const defaultBook = {
     id: 1,
-    name: 'Default Book',
+    name: 'Default Name',
+    description: 'Default Description',
   };
 
   beforeEach((done) => {
@@ -21,6 +22,7 @@ describe('Routes Books', () => {
                 .end((err, res) => {
                   expect(res.body[0].id).to.be.eql(defaultBook.id);
                   expect(res.body[0].name).to.be.eql(defaultBook.name);
+                  expect(res.body[0].description).to.be.eql(defaultBook.description);
 
                   done(err);
                 });
@@ -34,6 +36,7 @@ describe('Routes Books', () => {
                 .end((err, res) => {
                   expect(res.body.id).to.be.eql(defaultBook.id);
                   expect(res.body.name).to.be.eql(defaultBook.name);
+                  expect(res.body.description).to.be.eql(defaultBook.description);
 
                   done(err);
                 });
@@ -44,7 +47,8 @@ describe('Routes Books', () => {
     it('should create a book', (done) => {
       const newBook = {
         id: 2,
-        name: 'newBook',
+        name: 'newName',
+        description: 'newDescription',
       };
 
       request
@@ -53,6 +57,7 @@ describe('Routes Books', () => {
                 .end((err, res) => {
                   expect(res.body.id).to.be.eql(newBook.id);
                   expect(res.body.name).to.be.eql(newBook.name);
+                  expect(res.body.description).to.be.eql(newBook.description);
 
                   done(err);
                 });
@@ -63,7 +68,9 @@ describe('Routes Books', () => {
     it('should update a book', (done) => {
       const updatedBook = {
         id: 1,
-        name: 'updatedBook',
+        name: 'updatedNme',
+        description: 'updatedDescription',
+
       };
 
       request

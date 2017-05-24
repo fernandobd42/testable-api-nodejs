@@ -8,8 +8,11 @@ import booksRouter from './routes/books';
 const app = express();
 app.config = config;
 app.datasource = datasource(app);
+
 app.set('port', 3000);
+
 app.use(bodyParser.json());
+
 const Books = app.datasource.models.Books;
 booksRouter(app, Books);
 

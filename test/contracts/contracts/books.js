@@ -2,7 +2,8 @@ describe('Routes Books', () => {
   const Books = app.datasource.models.Books;
   const defaultBook = {
     id: 1,
-    name: 'Default Book',
+    name: 'Default Name',
+    description: 'Default Description',
   };
 
   beforeEach((done) => {
@@ -19,6 +20,7 @@ describe('Routes Books', () => {
       const bookList = Joi.array().items(Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
+        description: Joi.string(),
         created_at: Joi.date().iso(),
         updated_at: Joi.date().iso(),
       }));
@@ -37,6 +39,7 @@ describe('Routes Books', () => {
       const book = Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
+        description: Joi.string(),
         created_at: Joi.date().iso(),
         updated_at: Joi.date().iso(),
       });
@@ -54,12 +57,14 @@ describe('Routes Books', () => {
     it('should create a book', (done) => {
       const newBook = {
         id: 2,
-        name: 'newBook',
+        name: 'newName',
+        description: 'newDescription',
       };
 
       const book = Joi.object().keys({
         id: Joi.number(),
         name: Joi.string(),
+        description: Joi.string(),
         created_at: Joi.date().iso(),
         updated_at: Joi.date().iso(),
       });
@@ -78,7 +83,8 @@ describe('Routes Books', () => {
     it('should update a book', (done) => {
       const updatedBook = {
         id: 1,
-        name: 'updatedBook',
+        name: 'updatedName',
+        description: 'updatedDescription',
       };
 
       const updatedCount = Joi.array().items(1);
