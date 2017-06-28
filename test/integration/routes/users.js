@@ -6,7 +6,7 @@ describe('Routes Users', () => {
     id: 1,
     name: 'Default Name',
     email: 'DefaultEmail@gmail.com',
-    password: 'DefaultPassword'
+    password: 'DefaultPassword',
   };
 
   beforeEach((done) => {
@@ -52,7 +52,7 @@ describe('Routes Users', () => {
         id: 2,
         name: 'newName',
         email: 'newEmail@gmail.com',
-        password: 'newPassword'
+        password: 'newPassword',
       };
 
       request
@@ -74,7 +74,7 @@ describe('Routes Users', () => {
         id: 1,
         name: 'updatedNme',
         email: 'updatedEmail@gmail.com',
-        password: 'updatedPassword'
+        password: 'updatedPassword',
 
       };
 
