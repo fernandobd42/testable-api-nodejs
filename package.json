@@ -18,6 +18,9 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "http-status": "^1.0.1",
+    "jwt-simple": "^0.5.1",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
     "sequelize": "^3.30.4",
     "sqlite3": "^3.1.8"
   },
