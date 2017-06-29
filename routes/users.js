@@ -3,6 +3,7 @@ import UsersController from '../controllers/users';
 export default (app) => {
   const usersController = new UsersController(app.datasource.models.Users);
   app.route('/users')
+        .all(app.auth.authenticate())
         .get((req, res) => {
           usersController.getAll()
           .then((response) => {
@@ -10,6 +11,7 @@ export default (app) => {
             res.json(response.data);
           });
         })
+        .all(app.auth.authenticate())
         .post((req, res) => {
           usersController.create(req.body)
             .then((response) => {
@@ -19,6 +21,7 @@ export default (app) => {
         });
 
   app.route('/users/:id')
+        .all(app.auth.authenticate())
         .get((req, res) => {
           usersController.getOne(req.params)
           .then((response) => {
@@ -26,6 +29,7 @@ export default (app) => {
             res.json(response.data);
           });
         })
+        .all(app.auth.authenticate())
         .put((req, res) => {
           usersController.update(req.body, req.params)
             .then((response) => {
@@ -33,6 +37,7 @@ export default (app) => {
               res.json(response.data);
             });
         })
+        .all(app.auth.authenticate())
         .delete((req, res) => {
           usersController.delete(req.params)
             .then((response) => {
